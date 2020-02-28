@@ -6,7 +6,7 @@ from email import encoders
 from socket import gaierror
 
 
-def email_marketing_with_one_attachment(username_1, password_1, prenom_1, nom_1, telephone_1, filename_1, poste):
+def email_marketing_with_one_attachment(username_1, password_1, prenom_1, nom_1, telephone_1, filename_1, poste_1):
     fromaddr = username_1
     password = password_1
 
@@ -135,7 +135,7 @@ def email_marketing_with_one_attachment(username_1, password_1, prenom_1, nom_1,
 
     body = (
         "Bonjour,\n\n"
-        "Je suis à la recherche d'un poste de " + poste + " en CDI.\n"
+        "Je suis à la recherche d'un poste de " + poste_1 + " en CDI.\n"
         "Veuillez trouver mon CV en pièce jointe.\n\n"
         "Bien cordialement, \n\n" +
         prenom + " " + nom + "\n" +
@@ -156,7 +156,7 @@ def email_marketing_with_one_attachment(username_1, password_1, prenom_1, nom_1,
         msg = MIMEMultipart()
         msg['From'] = fromaddr
         msg['To'] = toaddr
-        msg['Subject'] = "Candidature spontanée pour un poste de " + poste + " en CDI"
+        msg['Subject'] = "Candidature spontanée pour un poste de " + poste_1 + " en CDI"
 
         msg.attach(MIMEText(body, 'plain'))
 
@@ -194,5 +194,5 @@ email_marketing_with_one_attachment(
     nom_1="",
     telephone_1="",
     filename_1="",
-    poste=""
+    poste_1=""
 )
